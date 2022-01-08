@@ -9,7 +9,4 @@ class Square(Figure):
     def __init__(self, a):
         self.area = a*a
         self.perimeter = a*4
-        # print(self.area)
-        # print(self.perimeter)
 
-s = Square(10)

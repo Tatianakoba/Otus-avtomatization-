@@ -9,7 +9,4 @@ class Rectangle(Figure):
     def __init__(self, a, b):
         self.area = a*b
         self.perimeter = (a+b)*2
-        # print(self.area)
-        # print(self.perimeter)
 
-s = Rectangle(5,7)

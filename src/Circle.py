@@ -10,7 +10,5 @@ class Circle(Figure):
         P = 3.14
         self.area = P*r*r
         self.perimeter = 2*r*P
-        # print(self.area)
-        # print(self.perimeter)
 
-s = Circle(10)
+
