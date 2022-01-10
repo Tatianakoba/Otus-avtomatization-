@@ -10,8 +10,3 @@ class Triangle(Figure):
         self.area = (p*(p-a)*(p-b)*(p-c))**0.5
         self.perimeter = a+b+c
 
-
-
-y=Triangle(3,6,9)
-print(y.area)
-print(y.perimeter)
