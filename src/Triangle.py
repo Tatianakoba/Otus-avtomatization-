@@ -1,6 +1,5 @@
 from Figure import Figure
 
-
 class Triangle(Figure):
     name = 'Triangle'
     area = None
@@ -13,3 +12,6 @@ class Triangle(Figure):
 
 
 
+y=Triangle(3,6,9)
+print(y.area)
+print(y.perimeter)
