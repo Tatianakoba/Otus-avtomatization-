@@ -7,6 +7,5 @@ class Square(Figure):
     perimeter = None
 
     def __init__(self, a):
-        self.area = a*a
-        self.perimeter = a*4
-
+        self.area = a * a
+        self.perimeter = a * 4

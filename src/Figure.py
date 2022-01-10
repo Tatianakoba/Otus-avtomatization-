@@ -10,6 +10,7 @@ class Figure:
 
     def add_area(self, area1):
         if not isinstance(area1, Figure):
-            raise ValueError ("Передан неправильный класс")
-        sum_area = self.area + area1.area # метод add_area(figure) который принимает другую геометрическую фигуру и возвращает сумму площадей этих фигур.
+            raise ValueError("Передан неправильный класс")
+        sum_area = self.area + area1.area  # метод add_area(figure) который принимает другую геометрическую фигуру
+        # и возвращает сумму площадей этих фигур.
         return sum_area

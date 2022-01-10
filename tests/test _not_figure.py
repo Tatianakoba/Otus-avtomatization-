@@ -1,6 +1,6 @@
-from Triangle import Triangle
+from src.Triangle import Triangle
 
-a=2
+a = 2
 
 T = Triangle(2, 7, 8)
 n = 10

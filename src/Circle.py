@@ -8,7 +8,5 @@ class Circle(Figure):
 
     def __init__(self, r):
         P = 3.14
-        self.area = P*r*r
-        self.perimeter = 2*r*P
-
-
+        self.area = P * r * r
+        self.perimeter = 2 * r * P

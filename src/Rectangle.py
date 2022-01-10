@@ -7,6 +7,5 @@ class Rectangle(Figure):
     perimeter = None
 
     def __init__(self, a, b):
-        self.area = a*b
-        self.perimeter = (a+b)*2
-
+        self.area = a * b
+        self.perimeter = (a + b) * 2

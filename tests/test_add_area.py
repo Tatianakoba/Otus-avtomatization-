@@ -1,12 +1,10 @@
-# import sys
-# sys.path.insert(0, '../src/')
 from src.Triangle import Triangle
 from src.Square import Square
 from src.Circle import Circle
 from src.Rectangle import Rectangle
 
-def test_add_arrea():
 
+def test_add_arrea():
     '''Проверка реализации метода add_area(figure)'''
     a = 2
     b = 5
@@ -25,4 +23,3 @@ def test_add_arrea():
     assert s.add_area(cir) == s.area + cir.area
     assert cir.add_area(rec) == cir.area + rec.area
     assert rec.add_area(t) == rec.area + t.area
-
