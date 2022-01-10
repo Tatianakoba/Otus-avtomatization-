@@ -1,5 +1,5 @@
-import sys
-sys.path.insert(0, '../src/')
+# import sys
+# sys.path.insert(0, '../src/')
 from src.Triangle import Triangle
 from src.Square import Square
 from src.Circle import Circle
