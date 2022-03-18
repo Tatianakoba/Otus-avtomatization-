@@ -193,3 +193,27 @@
 #             print(a[i][j], end='')
 #     print()
 
+
+
+# sum = 0
+# b = []
+# sumb = 0
+# while True:
+#     a = int(input())
+#     sum = sum + a
+#     sumb = sumb + a**2
+#     if sum == 0:
+#         print(sumb)
+#         break
+
+
+# n = int(input())
+# b = 0
+# for i in range(1, n + 1):
+#     for j in range(i):
+#         if b == n:
+#             break
+#         print(i, end=' ')
+#         b += 1
+
+
