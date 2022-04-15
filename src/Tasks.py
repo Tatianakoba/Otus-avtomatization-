@@ -15,10 +15,72 @@
 Порядок вывода команд произвольный.'''
 
 
-res = {}
-for _ in range(int(input())):
-    n1, r1, n2, r2 = (int(i) if i.isdigit() else i for i in input().split(';'))
-    res[n1] = list(map(sum, zip([1, r1 > r2, r1 == r2, r1 < r2], res.get(n1, [0, 0, 0, 0]))))
-    res[n2] = list(map(sum, zip([1, r2 > r1, r2 == r1, r2 < r1], res.get(n2, [0, 0, 0, 0]))))
+# res = {}
+# for _ in range(int(input())):
+#     n1, r1, n2, r2 = (int(i) if i.isdigit() else i for i in input().split(';'))
+#     res[n1] = list(map(sum, zip([1, r1 > r2, r1 == r2, r1 < r2], res.get(n1, [0, 0, 0, 0]))))
+#     res[n2] = list(map(sum, zip([1, r2 > r1, r2 == r1, r2 < r1], res.get(n2, [0, 0, 0, 0]))))
+#
+# print('\n'.join(f'{k}: {" ".join(map(str, v))} {v[1] * 3 + v[2]}' for k, v in res.items()))
 
-print('\n'.join(f'{k}: {" ".join(map(str, v))} {v[1] * 3 + v[2]}' for k, v in res.items()))
+'''Простейшая система проверки орфографии может быть основана на использовании списка известных слов.
+Если введённое слово не найдено в этом списке, оно помечается как "ошибка".
+
+Попробуем написать подобную систему.
+
+На вход программе первой строкой передаётся количество dd известных нам слов, после чего на dd строках указываются эти слова. Затем передаётся количество ll строк текста для проверки, после чего ll строк текста.
+
+Выведите уникальные "ошибки" в произвольном порядке. Работу производите без учёта регистра.'''
+
+# a = int(input())
+# b = []
+# for i in range(a):
+#     x = input().lower()
+#     if x not in b:
+#         b.append(x)
+#
+# d = int(input())
+# e = []
+# for j in range(d):
+#     x = input().lower().split()
+#     for i in x:
+#         if i not in b and i not in e:
+#             e.append(i)
+#
+# print('\n'.join(e))
+
+'''Дан файл с таблицей в формате TSV с информацией о росте школьников разных классов.
+
+Напишите программу, которая прочитает этот файл и подсчитает для каждого класса средний рост учащегося.
+
+Файл состоит из набора строк, каждая из которых представляет собой три поля:
+Класс Фамилия Рост
+
+Класс обозначается только числом. Буквенные модификаторы не используются. Номер класса может быть от 1 до 11 включительно. В фамилии нет пробелов, а в качестве роста используется натуральное число, но при подсчёте среднего требуется вычислить значение в виде вещественного числа.
+
+Выводить информацию о среднем росте следует в порядке возрастания номера класса (для классов с первого по одиннадцатый). Если про какой-то класс нет информации, необходимо вывести напротив него прочерк.
+
+В качестве ответа прикрепите файл с полученными данными о среднем росте.'''
+
+class_rawinfo = {}
+class_info = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
+
+with open('/home/tatianasergey/Загрузки/dataset_3380_5.txt') as in_f_obj:
+	for line in in_f_obj:
+		string = line.rstrip().split('\t')
+
+		if string[0] not in class_rawinfo:
+			class_rawinfo[string[0]] = [int(string[2]), 1]
+		elif string[0] in class_rawinfo:
+			heights = class_rawinfo[string[0]][0] + int(string[2])
+			students = class_rawinfo[string[0]][1] + 1
+			class_rawinfo[string[0]] = [heights, students]
+
+for k, v in class_rawinfo.items():
+	class_info[int(k)-1] = v[0] / v[1]
+
+
+with open('/home/tatianasergey/Загрузки/dataset_3380_5.txt', 'w') as out_f_obj:
+	for i in range(len(class_info)):
+		output = str(i+1) + ' ' + str(class_info[i]) + '\n'
+		out_f_obj.write(output)
